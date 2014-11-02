@@ -6,10 +6,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>continuous delivery test</name>
 	<properties>
-		<buildNumber>${project.version}</buildNumber>
+		<releaseTag>${project.version}</releaseTag>
+		<buildNumber></buildNumber>
+		<commit></commit>
 	</properties>
 	<build>
-		<finalName>${project.artifactId}-${buildNumber}</finalName>
+		<finalName>${project.artifactId}-${releaseTag}-${buildNumber}-${commit}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

@@ -1,11 +1,11 @@
 language: java
 before_install: echo "$TRAVIS_BUILD_NUMBER" > src/main/resources/build-number.txt
-install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -DbuildNumber=$TRAVIS_BUILD_NUMBER
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -DreleaseTag=$TRAVIS_TAG -DbuildNumber=$TRAVIS_BUILD_NUMBER -Dcommit=$TRAVIS_COMMIT
 deploy:
   provider: releases
   api_key:
     secure: WJCFgLBHpvkSZhR+jrv62azbtwsipPjyvVKE19mqc1LFZ74b/2esLzPnE8RlDIf4ciaj4ohLzKpKysy1PkiDr+FaA4j3IjUBcqjoQbYmosjUqFEMepBSUuscxUWPVECq8cN5G6Fwi9RODzMYNjJKCatb24f0ehb1a3kvyqiKlhA=
-  file: "target/cd-test-$TRAVIS_BUILD_NUMBER.jar"
+  file: "target/cd-test-$TRAVIS_TAG-$TRAVIS_BUILD_NUMBER-$TRAVIS_COMMIT.jar"
   skip_cleanup: true
   on:
     tags: true
