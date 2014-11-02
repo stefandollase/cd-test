@@ -5,7 +5,7 @@ deploy:
   provider: releases
   api_key:
     secure: WJCFgLBHpvkSZhR+jrv62azbtwsipPjyvVKE19mqc1LFZ74b/2esLzPnE8RlDIf4ciaj4ohLzKpKysy1PkiDr+FaA4j3IjUBcqjoQbYmosjUqFEMepBSUuscxUWPVECq8cN5G6Fwi9RODzMYNjJKCatb24f0ehb1a3kvyqiKlhA=
-  file: "target/cd-test-0.0.1-SNAPSHOT.jar"
+  file: "target/cd-test-$TRAVIS_BUILD_NUMBER.jar"
   skip_cleanup: true
   on:
     tags: true
