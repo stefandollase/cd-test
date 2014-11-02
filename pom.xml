@@ -5,7 +5,11 @@
 	<artifactId>cd-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>continuous delivery test</name>
+	<properties>
+		<buildNumber>${project.version}</buildNumber>
+	</properties>
 	<build>
+		<finalName>${project.artifactId}-${buildNumber}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
