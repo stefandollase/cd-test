@@ -1,2 +1,11 @@
 language: java
 before_script: echo "%{build_number}" > src/main/resources/build-number.txt
+deploy:
+  provider: releases
+  secure: "UIsEewOY9Nq4FtrJ2CBV+6Jvka5Iq+ctPpmdOozpaja3f/b2tOJXhq6Gs1wzRcnNi9dWYx4+kdYt9Bw2WNIV2hXHvIH4KXaLLUqnrhTfFjJA9IMgTYbAm/aw09SnJ5R/wAsbl9jQFrssQ5e2Usqt8fDGCjqC8BssKP97ql/ffV4="
+  file: "target/cd-test-0.0.1-SNAPSHOT.jar"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+
