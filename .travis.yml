@@ -1,5 +1,5 @@
 language: java
-before_script: echo "%{build_number}" > src/main/resources/build-number.txt
+before_install: echo "%{build_number}" > src/main/resources/build-number.txt
 deploy:
   provider: releases
   api_key:
