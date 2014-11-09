@@ -9,6 +9,6 @@ import de.linutopia.tests.cdtest.HelloWorld;
 public class HelloWorldTest {
 	@Test
 	public void testMessage() {
-		assertEquals("Hello World!", new HelloWorld().message());
+		assertEquals("Hi together!", new HelloWorld().message());
 	}
 }

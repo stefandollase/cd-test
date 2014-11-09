@@ -6,6 +6,6 @@ public class HelloWorld {
 	}
 
 	public String message() {
-		return "Hello World!";
+		return "Hi together!";
 	}
 }
